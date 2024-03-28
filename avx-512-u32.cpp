@@ -30,7 +30,7 @@ static_assert(ALIGNMENT % sizeof(vN_elem_t) == 0);
 
 constexpr uint32_t vec_type_num_elem = sizeof(vN_elem_t) / sizeof(vec_elem_t);
 // constexpr size_t vec_size_bytes      = 1024 * 1024 * 64;
-constexpr size_t vec_size_bytes = 1024 * 512;
+constexpr size_t vec_size_bytes = 1024 * 12;
 static_assert(vec_size_bytes % ALIGNMENT == 0);
 constexpr uint32_t vec_num_elem_max = UINT32_MAX / 2;
 constexpr uint32_t vec_num_elem     = vec_size_bytes / sizeof(vec_elem_t);

@@ -17,7 +17,7 @@ set(BUILD_SHARED_LIBS OFF)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_EXTENSIONS ON)
 
-set(FAST_CFLAGS -O3 -flto=full -funified-lto -ffat-lto-objects -fvisibility=hidden -fvisibility-inlines-hidden -fvisibility-inlines-hidden-static-local-var -fdata-sections -ffunction-sections -march=native -fno-unwind-tables -fno-asynchronous-unwind-tables)
+set(FAST_CFLAGS -Os -fvectorize -flto=full -funified-lto -ffat-lto-objects -fvisibility=hidden -fvisibility-inlines-hidden -fvisibility-inlines-hidden-static-local-var -fdata-sections -ffunction-sections -march=native -fno-unwind-tables -fno-asynchronous-unwind-tables)
 set(FAST_CXXFLAGS ${FAST_CFLAGS} -stdlib=libc++ -fno-rtti)
 set(FAST_LDFLAGS ${FAST_CXXFLAGS} -L/usr/lib/llvm-19/lib -Wl,-rpath,/usr/lib/llvm-19/lib -fuse-ld=lld -Wl,-gc-sections,--lto-O3,--optimize-bb-jumps,--lto=full,--lto-whole-program-visibility,--lto-partitions=1,--icf=none,--fat-lto-objects,--Bsymbolic)
 
